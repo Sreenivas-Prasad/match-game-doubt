@@ -17,6 +17,7 @@
 }
 .score {
   display: flex;
+  list-style: none;
 }
 
 .countdown {

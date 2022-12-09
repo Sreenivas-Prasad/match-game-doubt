@@ -20,6 +20,8 @@
 .score-para {
   color: #ffffff;
   font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 500;
 }
 .score-button {
   display: flex;
@@ -28,6 +30,8 @@
   color: #ffffff;
   font-family: 'Roboto';
   padding: 10px;
+  font-weight: 500;
+
   border-radius: 7px;
 }
 .reload {

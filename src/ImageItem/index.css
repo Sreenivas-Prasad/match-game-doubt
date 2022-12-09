@@ -6,3 +6,8 @@
   height: 60px;
   width: 60px;
 }
+.li-items {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}

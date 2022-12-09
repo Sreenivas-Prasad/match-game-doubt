@@ -9,9 +9,13 @@ const ImageItem = props => {
   }
 
   return (
-    <button type="button" className="img-button" onClick={giveImg}>
-      <img src={thumbnailUrl} className="img-item" alt="thumbnail" />
-    </button>
+    <li>
+      <button type="button" className="img-button" onClick={giveImg}>
+        <li className="li-items">
+          <img src={thumbnailUrl} className="img-item" alt="thumbnail" />
+        </li>
+      </button>
+    </li>
   )
 }
 export default ImageItem

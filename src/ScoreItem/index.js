@@ -1,18 +1,18 @@
 import './index.css'
 
-const Score = props => {
-  const {score, resetGame} = props
+const ScoreItem = props => {
+  const {Score, resetGame} = props
 
   return (
-    <div className="score-bg">
+    <li className="score-bg">
       <div className="score-items">
         <img
           src="https://assets.ccbp.in/frontend/react-js/match-game-trophy.png"
           alt="trophy"
           className="score-img"
         />
-        <h2 className="score-para">YOUR SCORE</h2>
-        <h2 className="score-para">{score}</h2>
+        <p className="score-para">YOUR SCORE</p>
+        <h2 className="score-para">{Score}</h2>
         <button type="button" className="score-button" onClick={resetGame}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/match-game-play-again-img.png"
@@ -22,8 +22,8 @@ const Score = props => {
           <p className="button-para">PLAY AGAIN</p>
         </button>
       </div>
-    </div>
+    </li>
   )
 }
 
-export default Score
+export default ScoreItem

@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 import './index.css'
 import TabItem from '../TabItem'
 import ImageItem from '../ImageItem'
-import Score from '../Score'
+import ScoreItem from '../ScoreItem'
 
 const tabsList = [
   {tabId: 'FRUIT', displayText: 'Fruits'},
@@ -253,11 +253,12 @@ const imagesList = [
 
 class MatchGame extends Component {
   state = {
-    score: 0,
+    Score: 0,
     secs: 60,
     tabId: tabsList[0].tabId,
     randomImg: imagesList[0].imageUrl,
     isActive: tabsList[0].tabId,
+    isCountDown: true,
   }
 
   componentDidMount() {
@@ -274,9 +275,13 @@ class MatchGame extends Component {
     const filteredList1 = imagesList.filter(each3 => each3.id === id)
     if (randomImg === filteredList1[0].imageUrl) {
       this.setState(prevState => ({
-        score: prevState.score + 1,
+        Score: prevState.Score + 1,
         randomImg: imagesList[randomNum].imageUrl,
       }))
+    } else {
+      const {Score} = this.state
+      this.setState({Score, isCountDown: false})
+      clearInterval(this.timerId)
     }
   }
 
@@ -288,21 +293,30 @@ class MatchGame extends Component {
   }
 
   resetGame = () => {
-    this.setState({secs: 10, score: 0})
+    this.setState({
+      secs: 60,
+      Score: 0,
+      isCountDown: true,
+      tabId: tabsList[0].tabId,
+      randomImg: imagesList[0].imageUrl,
+      isActive: tabsList[0].tabId,
+    })
+    this.timerId = setInterval(this.tick, 1000)
   }
 
   render() {
-    const {score, secs, tabId, randomImg, isActive} = this.state
+    const {Score, secs, tabId, randomImg, isActive, isCountDown} = this.state
     console.log(secs)
     const filteredList = imagesList.filter(each2 => each2.category === tabId)
+
     return (
       <div>
-        <Navbar score={score} secs={secs} />
+        <Navbar Score={Score} secs={secs} />
         <div className="mg-bg">
-          {secs === 0 ? (
-            <div className="score-con">
-              <Score score={score} resetGame={this.resetGame} />
-            </div>
+          {secs === 0 || isCountDown === false ? (
+            <ul className="score-con">
+              <ScoreItem Score={Score} resetGame={this.resetGame} />
+            </ul>
           ) : (
             <div>
               <div className="img-con">
@@ -313,12 +327,12 @@ class MatchGame extends Component {
                   <TabItem
                     tabsList={each1}
                     getId={this.getId}
-                    key={each1.id}
                     isActive={isActive}
+                    key={each1.tabId}
                   />
                 ))}
               </ul>
-              <div className="forImg">
+              <ul className="forImg">
                 {filteredList.map(each2 => (
                   <ImageItem
                     imagesList={each2}
@@ -326,7 +340,7 @@ class MatchGame extends Component {
                     key={each2.id}
                   />
                 ))}
-              </div>
+              </ul>
             </div>
           )}
         </div>

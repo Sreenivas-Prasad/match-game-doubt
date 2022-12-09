@@ -8,13 +8,15 @@ const TabItem = props => {
   }
 
   return (
-    <button
-      type="button"
-      className={isActive === tabId ? 'tabi-button underline' : 'tabi-button'}
-      onClick={giveId}
-    >
-      {displayText}
-    </button>
+    <li>
+      <button
+        type="button"
+        className={isActive === tabId ? 'tabi-button underline' : 'tabi-button'}
+        onClick={giveId}
+      >
+        {displayText}
+      </button>
+    </li>
   )
 }
 
