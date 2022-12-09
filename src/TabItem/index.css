@@ -1,0 +1,18 @@
+.tabsList-bg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.tabi-button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 10px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+}
+.underline {
+  text-decoration: underline #fec653;
+  color: #fec653;
+}

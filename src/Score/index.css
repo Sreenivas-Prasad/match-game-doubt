@@ -1,0 +1,41 @@
+.score-bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-sm-bg.png');
+  background-size: cover;
+  min-height: 75vh;
+  padding: 10px;
+  border-radius: 10px;
+}
+.score-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 15px;
+}
+.score-img {
+  height: 180px;
+  width: 260px;
+}
+.score-para {
+  color: #ffffff;
+  font-family: 'Roboto';
+}
+.score-button {
+  display: flex;
+  border: none;
+  background-color: #cf60c8;
+  color: #ffffff;
+  font-family: 'Roboto';
+  padding: 10px;
+  border-radius: 7px;
+}
+.reload {
+  margin-top: 11px;
+  margin-right: 5px;
+}
+.button-para {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 500;
+}

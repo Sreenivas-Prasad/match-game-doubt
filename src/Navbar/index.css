@@ -1,0 +1,36 @@
+.nav-bg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c0e3a;
+  padding: 10px;
+}
+.nav-logo {
+  height: 40px;
+  width: 100px;
+}
+.nav-para1 {
+  color: #fec653;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
+.score {
+  display: flex;
+}
+
+.countdown {
+  display: flex;
+  margin-left: 10px;
+}
+.timer {
+  height: 25px;
+  width: 25px;
+  margin-top: 13px;
+  margin-right: 10px;
+}
+.time {
+  color: #fec653;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
